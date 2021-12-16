@@ -5,19 +5,33 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "deploy": "bash deploy.sh"
   },
   "dependencies": {
+    "@sentry/tracing": "^6.16.1",
+    "@sentry/vue": "^6.16.1",
+    "android-fastboot": "^1.1.1",
+    "ansi-regex": "^6.0.1",
+    "cancelable-promise": "^4.2.1",
+    "compression-webpack-plugin": "^9.1.2",
     "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "source-map": "^0.7.3",
+    "vue": "^2.6.11",
+    "vue-router": "3.x",
+    "vuetify": "^2.6.1",
+    "webpack": "^5.1.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
+    "deepmerge": "^4.2.2",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "sass": "~1.32",
+    "sass-loader": "^12.4.0",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
