@@ -43,7 +43,7 @@
             {{ device.name }}
           </v-list-item-subtitle>
           <v-list-item-subtitle
-            class="text-h6 blue-grey white--text"
+            class="text-h6 indigo darken-4 white--text"
           >
             {{ device.model }}
           </v-list-item-subtitle>

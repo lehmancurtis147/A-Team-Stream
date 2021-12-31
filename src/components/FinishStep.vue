@@ -49,7 +49,7 @@
               height="80px"
               width="80px"
               class="d-inline justify-space-between"
-              src="./icons/PaypalIcon.jpeg"
+              src="./icons/PaypalIcon.png"
             />
           </div>
           {{ donation.title }}

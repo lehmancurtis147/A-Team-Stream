@@ -6,11 +6,10 @@ set -e
 yarn build
 
 #workbox generateSW workbox-config.js
+# Build cache service worker
+workbox generateSW workbox-config.js
 
 cd dist
-
-# Build cache service worker
-#../workbox generateSW workbox-config.js
 
 function ignore ()
 {

@@ -1,19 +1,24 @@
 <template>
   <v-app id="app">
     <v-main>
-      <v-card id="boarder" center class="ma-2 pa-2 inline-block">
-        <v-toolbar class="container pa-4" style="background: transparent none no-repeat scroll 0 0;" flat app dark>
-          <img center height="135" width="800" class="ma-2 pa-1" alt="Vue logo" src="./assets/logo4.png">
-        </v-toolbar>
-          <v-row class="fill-height ma-4 pa-0" align="center" justify="center">
+      <template>
+        <v-card id="boarder" class="overflow-hidden">
+          <header class="container pt-n4 py-4 v-sheet theme--dark v-toolbar v-toolbar--flat" app="" style="height: 64px; background: none 0px 0px no-repeat scroll transparent;">
+            <span class="pl-n6 pt-lg-16 pb-lg-16 my-lg-8 v-toolbar__content">
+              <img height="252" width="373" alt="Vue logo" src="./assets/logo4.png" class="ma-2 pa-2">
+            </span>
+          </header>
+          <v-divider class="pa-7 ma-7"/>
+          <v-row class="fill-height ma-3 pa-3" align="center" justify="center">
             <v-col cols="12" sm="4"></v-col>
               <v-col cols="12" sm="9" class="justify-center ma-0 pa-0">
                 <Installer />
               </v-col>
                 <v-col cols="12" sm="4"></v-col>
           </v-row>
-      </v-card>
-        <Footer class="ma-2 pa-4" />
+        <Footer flat class="ma-n4 pa-0" />
+        </v-card>
+      </template>
     </v-main>
   </v-app>
 </template>
@@ -47,10 +52,9 @@ export default {
 }
 
 #boarder {
-    border: 17px groove rgba(28, 110, 164, 0.76);
-    background: #822E01;
-    background: -moz-linear-gradient(-45deg, #822E01 0%, #945804 16%, #085592 100%);
-    background: -webkit-linear-gradient(-45deg, #822E01 0%, #945804 16%, #085592 100%);
-    background: linear-gradient(135deg, #822E01 0%, #945804 16%, #085592 100%);
+    background: #030847;
+    background: -moz-linear-gradient(top, #030847 0%, #2E3D8D 32%, #030506 100%);
+    background: -webkit-linear-gradient(top, #030847 0%, #2E3D8D 32%, #030506 100%);
+    background: linear-gradient(to bottom, #030847 0%, #2E3D8D 32%, #030506 100%);
 }
 </style>

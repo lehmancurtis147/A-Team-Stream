@@ -1129,6 +1129,11 @@
     "@types/qs" "*"
     "@types/serve-static" "*"
 
+"@types/fill-range@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@types/fill-range/-/fill-range-7.0.0.tgz#d3e950fe12c301c7c2972c46cf0be437420121ec"
+  integrity sha512-fvu1j/lHS6fgXib8Y0d800BQFrJEVhC7oA9PFEmgikpKV9XMn7prZj1qXbEDnuuZwFj+050Rdw0MthKIn/ZC6w==
+
 "@types/glob@^7.1.1":
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/@types/glob/-/glob-7.2.0.tgz#bc1b5bf3aa92f25bd5dd39f35c57361bdce5b2eb"
@@ -1173,6 +1178,11 @@
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/@types/normalize-package-data/-/normalize-package-data-2.4.1.tgz#d3357479a0fdfdd5907fe67e17e0a85c906e1301"
   integrity sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==
+
+"@types/path-browserify@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@types/path-browserify/-/path-browserify-1.0.0.tgz#294ec6e88b6b0d340a3897b7120e5b393f16690e"
+  integrity sha512-XMCcyhSvxcch8b7rZAtFAaierBYdeHXVvg2iYnxOV0MCQHmPuRRmGZPFDRzPayxcGiiSL1Te9UIO+f3cuj0tfw==
 
 "@types/q@^1.5.1":
   version "1.5.5"

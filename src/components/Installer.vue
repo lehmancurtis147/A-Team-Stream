@@ -15,9 +15,10 @@
     @nextStep="curStep += 1"
   >
     <v-stepper-header
-      class="mb-6 white--text"
+      class="ma-0 blue darken-4"
     >
       <v-stepper-step
+        class="blue darken-4"
         :complete="curStep > 1"
         step="1"
       >
@@ -27,6 +28,7 @@
       <v-divider></v-divider>
 
       <v-stepper-step
+        class="blue darken-4"
         :complete="curStep > 2"
         step="2"
       >
@@ -36,6 +38,7 @@
       <v-divider></v-divider>
 
       <v-stepper-step
+        class="blue darken-4"
         :complete="curStep > 3"
         step="3"
       >
@@ -45,6 +48,7 @@
       <v-divider></v-divider>
 
       <v-stepper-step
+        class="blue darken-4"
         :complete="curStep > 4"
         step="4"
       >

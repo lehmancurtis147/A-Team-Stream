@@ -23,3 +23,22 @@ export function logEvent(event, callback) {
     callback()
   }
 }
+
+export function readBlobAsBuffer(blob) {
+  return new Promise((resolve, reject) => {
+    let reader = new FileReader()
+    reader.onload = () => {
+      resolve(reader.result)
+    }
+    reader.onerror = () => {
+      reject(reader.error)
+    }
+    reader.readAsArrayBuffer(blob)
+  })
+}
+
+function waitForFrame() {
+  return new Promise((resolve, _reject) => {
+    window.requestAnimationFrame(resolve)
+  })
+}

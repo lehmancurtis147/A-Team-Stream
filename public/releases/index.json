@@ -6,56 +6,56 @@
                 "variant": "teamWin",
                 "partition": "recovery",
                 "thumnail": "/thumnails/twrp.png",
-                "url": "./files/twrp-tetra.img.gz"
+                "url": "/releases/files/twrp-tetra.img.zip"
             },
             {
                 "version": "OFRP",
                 "variant": "orangeFox",
                 "partition": "recovery",
                 "thumnail": "/thumnails/ofrp.png",
-                "url": "./files/orfp-tetra.img.gz"
+                "url": "/releases/files/orfp-tetra.img.zip"
             },
             {
                 "version": "PBRP",
                 "variant": "pitchBlack",
                 "partition": "recovery",
                 "thumnail": "/thumnails/pbrp.png",
-                "url": "./files/pbrp-tetra.img.gz"
+                "url": "/releases/files/pbrp-tetra.img.zip"
             },
             {
                 "version": "SHRP",
                 "variant": "skyHawk",
                 "partition": "recovery",
                 "thumnail": "/thumnails/shrp.png",
-                "url":"./files/shrp-tetra.img.gz"
+                "url":"/releases/files/shrp-tetra.img.zip"
             },
             {
                 "version": "NSRP",
                 "variant": "nusantara",
                 "partition": "recovery",
                 "thumnail": "/thumnails/nsrp.png",
-                "url":"./files/nsrp-tetra.img.gz"
+                "url":"/releases/files/nsrp-tetra.img.zip"
             },
             {
                 "version": "DSRP",
                 "variant": "darkStar",
                 "partition": "recovery",
                 "thumnail": "/thumnails/dsrp.png",
-                "url":"./files/dsrp-tetra.img.gz"
+                "url":"/releases/files/dsrp-tetra.img.zip"
             },
             {
                 "version": "RWRP",
                 "variant": "redWolf",
                 "partition": "recovery",
                 "thumnail": "/thumnails/rwrp.png",
-                "url":"./files/rwrp-tetra.img.gz"
+                "url":"/releases/files/rwrp-tetra.img.zip"
             },
             {
                 "version": "BKRP",
                 "variant": "batik",
                 "partition": "recovery",
                 "thumnail": "/thumnails/bkrp.png",
-                "url": "./files/bkrp-tetra.img.gz"
+                "url": "/releases/files/bkrp-tetra.img.zip"
             }
         ],
         "U50A_PLUS_ATT": [
@@ -175,13 +175,13 @@
                 "version": "PBRP",
                 "variant": "pitchBlack",
                 "thumnail": "/thumnails/pbrp.png",
-                "url": "/releases/files/recovery-pbrp_idol5-custom_1.img.gz"
+                "url": "/releases/files/recovery-pbrp_idol5-custom_1.img.zip"
             },
             {
                 "version": "SHRP",
                 "variant": "skyHawk",
                 "thumnail": "/thumnails/shrp.png",
-                "url":"/releases/files/recovery-shrp_idol5-custom_1.img.gz"
+                "url":"/releases/files/recovery-shrp_idol5-custom_1.img.zip"
             }
         ],
         "idol4": [
@@ -189,13 +189,13 @@
                 "version": "TWRP",
                 "variant": "teamWin",
                 "thumnail": "/thumnails/twrp.png",
-                "url": "/releases/files/recovery-twrp_idol4-custom_1.img.gz"
+                "url": "/releases/files/recovery-twrp_idol4-custom_1.img.zip"
             },
             {
                 "version": "OFRP",
                 "variant": "orangeFox",
                 "thumnail": "/thumnails/ofrp.png",
-                "url": "/releases/files/recovery-ofrp_idol4-custom_1.img.gz"
+                "url": "/releases/files/recovery-ofrp_idol4-custom_1.img.zip"
             }
         ],
         "FERMI_TF": [
