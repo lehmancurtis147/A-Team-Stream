@@ -63,49 +63,43 @@
                 "version": "TWRP",
                 "variant": "teamWin",
                 "thumnail": "/thumnails/twrp.png",
-                "url": ""
+                "url": "/releases/files/twrp-xtra.img.zip"
             },
             {
                 "version": "OFRP",
                 "variant": "orangeFox",
                 "thumnail": "/thumnails/ofrp.png",
-                "url": ""
+                "url": "/releases/files/ofrp-xtra.img.zip"
             },
             {
                 "version": "PBRP",
                 "variant": "pitchBlack",
                 "thumnail": "/thumnails/pbrp.png",
-                "url": ""
+                "url": "/releases/files/pbrp-xtra.img.zip"
             },
             {
                 "version": "SHRP",
                 "variant": "skyHawk",
                 "thumnail": "/thumnails/shrp.png",
-                "url": ""
+                "url": "/releases/files/ofrp-xtra.img.zip"
             },
             {
                 "version": "NSRP",
                 "variant": "nusantara",
                 "thumnail": "/thumnails/nsrp.png",
-                "url": ""
+                "url": "/releases/files/nsrp-xtra.img.zip"
             },
             {
                 "version": "DSRP",
                 "variant": "darkStar",
                 "thumnail": "/thumnails/dsrp.png",
-                "url": ""
-            },
-            {
-                "version": "RWRP",
-                "variant": "redWolf",
-                "thumnail": "/thumnails/rwrp.png",
-                "url": ""
+                "url": "/releases/files/dsrp-xtra.img.zip"
             },
             {
                 "version": "BKRP",
                 "variant": "batik",
                 "thumnail": "/thumnails/bkrp.png",
-                "url": ""
+                "url": "/releases/files/bkrp-xtra.img.zip"
             }
         ],
         "U50A_PLUS_TF": [
@@ -113,49 +107,43 @@
                 "version": "TWRP",
                 "variant": "teamWin",
                 "thumnail": "/thumnails/twrp.png",
-                "url": ""
+                "url": "/releases/files/twrp-lx.img.zip"
             },
             {
                 "version": "OFRP",
                 "variant": "orangeFox",
                 "thumnail": "/thumnails/ofrp.png",
-                "url": ""
+                "url": "/releases/files/ofrp-lx.img.zip"
             },
             {
                 "version": "PBRP",
                 "variant": "pitchBlack",
                 "thumnail": "/thumnails/pbrp.png",
-                "url": ""
+                "url": "/releases/files/pbrp-lx.img.zip"
             },
             {
                 "version": "SHRP",
                 "variant": "skyHawk",
                 "thumnail": "/thumnails/shrp.png",
-                "url": ""
+                "url": "/releases/files/shrp-lx.img.zip"
             },
             {
                 "version": "NSRP",
                 "variant": "nusantara",
                 "thumnail": "/thumnails/nsrp.png",
-                "url": ""
+                "url": "/releases/files/nsrp-lx.img.zip"
             },
             {
                 "version": "DSRP",
                 "variant": "darkStar",
                 "thumnail": "/thumnails/dsrp.png",
-                "url": ""
-            },
-            {
-                "version": "RWRP",
-                "variant": "redWolf",
-                "thumnail": "/thumnails/rwrp.png",
-                "url": ""
+                "url": "/releases/files/dsrp-lx.img.zip"
             },
             {
                 "version": "BKRP",
                 "variant": "batik",
                 "thumnail": "/thumnails/bkrp.png",
-                "url": ""
+                "url": "/releases/files/bkrp-lx.img.zip"
             }
         ],
         "simba6_cricket": [
@@ -163,25 +151,25 @@
                 "version": "TWRP",
                 "variant": "teamWin",
                 "thumnail": "/thumnails/twrp.png",
-                "url": ""
+                "url": "/releases/files/twrp-idol5.img.zip"
             },
             {
                 "version": "OFRP",
                 "variant": "orangeFox",
                 "thumnail": "/thumnails/ofrp.png",
-                "url": ""
+                "url": "/releases/files/ofrp-idol5.img.zip"
             },
             {
                 "version": "PBRP",
                 "variant": "pitchBlack",
                 "thumnail": "/thumnails/pbrp.png",
-                "url": "/releases/files/recovery-pbrp_idol5-custom_1.img.zip"
+                "url": "/releases/files/pbrp-idol5.img.zip"
             },
             {
                 "version": "SHRP",
                 "variant": "skyHawk",
                 "thumnail": "/thumnails/shrp.png",
-                "url":"/releases/files/recovery-shrp_idol5-custom_1.img.zip"
+                "url": "/releases/files/shrp-idol5.img.zip"
             }
         ],
         "idol4": [
@@ -189,13 +177,13 @@
                 "version": "TWRP",
                 "variant": "teamWin",
                 "thumnail": "/thumnails/twrp.png",
-                "url": "/releases/files/recovery-twrp_idol4-custom_1.img.zip"
+                "url": "/releases/files/twrp-idol4.img.zip"
             },
             {
                 "version": "OFRP",
                 "variant": "orangeFox",
                 "thumnail": "/thumnails/ofrp.png",
-                "url": "/releases/files/recovery-ofrp_idol4-custom_1.img.zip"
+                "url": "/releases/files/ofrp-idol4.img.zip"
             }
         ],
         "FERMI_TF": [
@@ -203,13 +191,13 @@
               "version": "TWRP",
               "variant": "teamWin",
               "thumnail": "/thumnails/twrp.png",
-              "url": ""
+              "url": "/releases/files/twrp-a1.img.zip"
             },
             {
               "version": "OFRP",
               "variant": "orangeFox",
               "thumnail": "/thumnails/ofrp.png",
-              "url": ""
+              "url": "/releases/files/ofrp-a1.img.zip"
             }
         ]
     }
