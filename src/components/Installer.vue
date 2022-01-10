@@ -76,6 +76,7 @@
           :class="curStep === 0 ? 'd-flex flex-column flex-grow-1' : null"
         >
           <install-type-step
+            v-bind="InstallTypeStep"
             :device="device"
             :blob-store="blobStore"
             :active="curStep === 0"
@@ -87,6 +88,7 @@
           :class="curStep === 1 ? 'd-flex flex-column flex-grow-1' : null"
         >
           <connect-step
+            v-bind="ConnectStep"
             :device="device"
             :blob-store="blobStore"
             :active="curStep === 1"
@@ -98,6 +100,7 @@
           :class="curStep === 2 ? 'd-flex flex-column flex-grow-1' : null"
         >
           <unlock-step
+            v-bind="UnlockStep"
             :device="device"
             :blob-store="blobStore"
             :curStep="curStep === 2"
@@ -109,6 +112,7 @@
           :class="curStep === 3 ? 'd-flex flex-column flex-grow-1' : null"
         >
           <download-step
+            v-bind="DownloadStep"
             :device="device"
             :blob-store="blobStore"
             :active="curStep === 3"
@@ -120,6 +124,7 @@
           :class="curStep === 4 ? 'd-flex flex-column flex-grow-1' : null"
         >
           <install-step
+            v-bind="InstallStep"
             :device="device"
             :blob-store="blobStore"
             :active="curStep === 4"
@@ -131,6 +136,7 @@
           :class="curStep === 5 ? 'd-flex flex-column flex-grow-1' : null"
         >
           <finish-step
+            v-bind="FinishStep"
             :device="device"
             :blob-store="blobStore"
             :active="curStep === 5"
@@ -270,6 +276,7 @@
               </ul>
             </p>
               <connect-banner
+                v-bind="ConnectBanner"
                 :device="device"
                 :connecting="disconnectReconnecting"
                 :error="disconnectReconnectError"
@@ -490,14 +497,7 @@
 <script>
 import * as fastboot from 'android-fastboot'
 import { BlobStore } from '../core/download'
-import ConnectBanner from './ConnectBanner'
 import PrepareStep from './PrepareStep'
-import InstallTypeStep from './InstallTypeStep'
-import ConnectStep from './ConnectStep'
-import UnlockStep from './UnlockStep'
-import DownloadStep from './DownloadStep'
-import InstallStep from './InstallStep'
-import FinishStep from './FinishStep'
 
 fastboot.setDebugLevel(1)
 
@@ -506,33 +506,34 @@ const blobStore = new BlobStore()
 
 export default {
   name: 'Installer',
+  data () {
+    return {
+      device: device,
+      blobStore: blobStore,
+      curStep: -1,
+      udevDialog: false,
+      claimDialog: false,
+      storageDialog: false,
+      memoryDialog: false,
+      timeoutDialog: false,
+      retryCallbacks: [],
+      disconnectDialog: false,
+      disconnectReconnecting: false,
+      disconnectReconnectError: null,
+      reconnectDialog: false,
+      reconnectError: null
+    }
+  },
   components: {
     PrepareStep,
-    InstallTypeStep,
-    ConnectStep,
-    UnlockStep,
-    DownloadStep,
-    InstallStep,
-    FinishStep,
-    ConnectBanner
+    InstallTypeStep: () => import('@/components/InstallTypeStep.vue'),
+    ConnectStep: () => import('@/components/ConnectStep.vue'),
+    UnlockStep: () => import('@/components/UnlockStep.vue'),
+    DownloadStep: () => import('@/components/DownloadStep.vue'),
+    InstallStep: () => import('@/components/InstallStep.vue'),
+    FinishStep: () => import('@/components/FinishStep.vue'),
+    ConnectBanner: () => import('@/components/ConnectBanner.vue')
   },
-
-  data: () => ({
-    device: device,
-    blobStore: blobStore,
-    curStep: -1,
-    udevDialog: false,
-    claimDialog: false,
-    storageDialog: false,
-    memoryDialog: false,
-    timeoutDialog: false,
-    retryCallbacks: [],
-    disconnectDialog: false,
-    disconnectReconnecting: false,
-    disconnectReconnectError: null,
-    reconnectDialog: false,
-    reconnectError: null
-  }),
   methods: {
     handleSelfError (error, retryCallback) {
       this.$refs.stepper.$emit(error, retryCallback)

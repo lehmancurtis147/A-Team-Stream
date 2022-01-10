@@ -3,13 +3,10 @@
     <v-main>
       <template>
         <v-card id="boarder" class="overflow-hidden">
-          <header class="container pt-n4 py-4 v-sheet theme--dark v-toolbar v-toolbar--flat" app="" style="height: 64px; background: none 0px 0px no-repeat scroll transparent;">
-            <span class="pl-n6 pt-lg-16 pb-lg-16 my-lg-8 v-toolbar__content">
-              <img height="252" width="373" alt="Vue logo" src="./assets/logo4.png" class="ma-2 pa-2">
+            <span class="pa-n8 ma-n8 container" align="right">
+              <img height="252" width="373" alt="Vue logo" src="./assets/logo4.png" class="ma-n4 pa-n10 mb-n10 pb-n10">
             </span>
-          </header>
-          <v-divider class="pa-7 ma-7"/>
-          <v-row class="fill-height ma-3 pa-3" align="center" justify="center">
+          <v-row class="fill-height ma-0 pa-0" align="center" justify="center">
             <v-col cols="12" sm="4"></v-col>
               <v-col cols="12" sm="9" class="justify-center ma-0 pa-0">
                 <Installer />
