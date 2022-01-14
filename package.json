@@ -23,7 +23,6 @@
     "envify": "^4.1.0",
     "source-map": "^0.7.3",
     "vue": "^2.6.11",
-    "vue-router": "3.x",
     "vuetify": "^2.6.1",
     "webpack": "^5.1.0"
   },
@@ -35,8 +34,10 @@
     "deepmerge": "^4.2.2",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "mini-css-extract-plugin": "^2.4.7",
     "sass": "~1.32",
     "sass-loader": "^12.4.0",
+    "vue-router": "^3.5.3",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {

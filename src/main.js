@@ -7,6 +7,8 @@ import { Integrations } from '@sentry/tracing'
 import { cancelable, CancelablePromise } from 'cancelable-promise'
 import vuetify from './plugins/vuetify.js'
 import Config from './config'
+import 'core-js/modules/es.promise'
+import 'core-js/modules/es.array.iterator'
 
 const promises = [
   cancelable(new Promise((resolve) => setTimeout(resolve, 1))),
@@ -23,14 +25,14 @@ Vue.config.productionTip = false
 Vue.mixin({
   methods: {
     saEvent: common.logEvent,
-    $bubble (event, ...args) {
+    $bubble(event, ...args) {
       let component = this
       do {
         component.$emit(event, ...args)
         component = component.$parent
       } while (component)
     },
-    bubbleError (err, retryCallback = undefined) {
+    bubbleError(err, retryCallback = undefined) {
       let errEvent = null
       let errMessage = err.message
       if (errors.isConnectSelectError(err)) {

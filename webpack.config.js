@@ -2,6 +2,31 @@ const path = require('path')
 const zlib = require('zlib')
 const CompressionPlugin = require('compression-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
+module.exports = {
+  // other options...
+  module: {
+    rules: [
+      // ... other rules omitted
+      {
+        test: /\.css$/,
+        use: [
+          process.env.NODE_ENV !== 'production'
+            ? 'vue-style-loader'
+            : MiniCssExtractPlugin.loader,
+          'css-loader'
+        ]
+      }
+    ]
+  },
+  plugins: [
+    // ... Vue Loader plugin omitted
+    new MiniCssExtractPlugin({
+      filename: 'style.css'
+    })
+  ]
+}
 
 module.exports = {
   plugins: [

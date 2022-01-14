@@ -75,72 +75,67 @@
           step="0"
           :class="curStep === 0 ? 'd-flex flex-column flex-grow-1' : null"
         >
-          <install-type-step
-            v-bind="InstallTypeStep"
-            :device="device"
-            :blob-store="blobStore"
-            :active="curStep === 0"
-          />
+        <InstallTypeStep
+          :device="device"
+          :blob-store="blobStore"
+          :active="curStep === 0"
+        />
+
         </v-stepper-content>
 
         <v-stepper-content
           step="1"
           :class="curStep === 1 ? 'd-flex flex-column flex-grow-1' : null"
         >
-          <connect-step
-            v-bind="ConnectStep"
-            :device="device"
-            :blob-store="blobStore"
-            :active="curStep === 1"
-          />
+        <ConnectStep
+          :device="device"
+          :blob-store="blobStore"
+          :active="curStep === 1"
+        />
         </v-stepper-content>
 
         <v-stepper-content
           step="2"
           :class="curStep === 2 ? 'd-flex flex-column flex-grow-1' : null"
         >
-          <unlock-step
-            v-bind="UnlockStep"
-            :device="device"
-            :blob-store="blobStore"
-            :curStep="curStep === 2"
-          />
+        <UnlockStep
+          :device="device"
+          :blob-store="blobStore"
+          :curStep="curStep === 2"
+        />
         </v-stepper-content>
 
         <v-stepper-content
           step="3"
           :class="curStep === 3 ? 'd-flex flex-column flex-grow-1' : null"
         >
-          <download-step
-            v-bind="DownloadStep"
-            :device="device"
-            :blob-store="blobStore"
-            :active="curStep === 3"
-          />
+        <DownloadStep
+          :device="device"
+          :blob-store="blobStore"
+          :active="curStep === 3"
+        />
         </v-stepper-content>
 
         <v-stepper-content
           step="4"
           :class="curStep === 4 ? 'd-flex flex-column flex-grow-1' : null"
         >
-          <install-step
-            v-bind="InstallStep"
-            :device="device"
-            :blob-store="blobStore"
-            :active="curStep === 4"
-          />
+        <InstallStep
+          :device="device"
+          :blob-store="blobStore"
+          :active="curStep === 4"
+        />
         </v-stepper-content>
 
         <v-stepper-content
           step="5"
           :class="curStep === 5 ? 'd-flex flex-column flex-grow-1' : null"
         >
-          <finish-step
-            v-bind="FinishStep"
-            :device="device"
-            :blob-store="blobStore"
-            :active="curStep === 5"
-          />
+        <FinishStep
+          :device="device"
+          :blob-store="blobStore"
+          :active="curStep === 5"
+        />
         </v-stepper-content>
     </v-stepper-items>
   </v-stepper>
@@ -275,12 +270,11 @@
                 <li>Make sure the cable isn’t loose</li>
               </ul>
             </p>
-              <connect-banner
-                v-bind="ConnectBanner"
-                :device="device"
-                :connecting="disconnectReconnecting"
-                :error="disconnectReconnectError"
-              />
+            <ConnectBanner
+              :device="device"
+              :connecting="disconnectReconnecting"
+              :error="disconnectReconnectError"
+            />
           </v-card-text>
 
             <v-card-actions>
@@ -504,6 +498,14 @@ fastboot.setDebugLevel(1)
 const device = new fastboot.FastbootDevice()
 const blobStore = new BlobStore()
 
+const InstallTypeStep = () => import('@/components/InstallTypeStep.vue')
+const ConnectStep = () => import('@/components/ConnectStep.vue')
+const UnlockStep = () => import('@/components/UnlockStep.vue')
+const DownloadStep = () => import('@/components/DownloadStep.vue')
+const InstallStep = () => import('@/components/InstallStep.vue')
+const FinishStep = () => import('@/components/FinishStep.vue')
+const ConnectBanner = () => import('@/components/ConnectBanner.vue')
+
 export default {
   name: 'Installer',
   data () {
@@ -526,13 +528,13 @@ export default {
   },
   components: {
     PrepareStep,
-    InstallTypeStep: () => import('@/components/InstallTypeStep.vue'),
-    ConnectStep: () => import('@/components/ConnectStep.vue'),
-    UnlockStep: () => import('@/components/UnlockStep.vue'),
-    DownloadStep: () => import('@/components/DownloadStep.vue'),
-    InstallStep: () => import('@/components/InstallStep.vue'),
-    FinishStep: () => import('@/components/FinishStep.vue'),
-    ConnectBanner: () => import('@/components/ConnectBanner.vue')
+    InstallTypeStep,
+    ConnectStep,
+    UnlockStep,
+    DownloadStep,
+    InstallStep,
+    FinishStep,
+    ConnectBanner
   },
   methods: {
     handleSelfError (error, retryCallback) {
