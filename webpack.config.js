@@ -3,6 +3,25 @@ const zlib = require('zlib')
 const CompressionPlugin = require('compression-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
+module.exports = {
+  plugins: [
+    new BundleAnalyzerPlugin()
+  ]
+}
+
+module.exports = [
+  {
+    entry: "./main.js",
+    output: {
+      filename: "output.js"
+    },
+    optimization: {
+      usedExports: true, // <- remove unused function
+    }
+  },
+]
 
 module.exports = {
   // other options...

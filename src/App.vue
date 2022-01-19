@@ -43,7 +43,6 @@ export default {
     font-display: swap;
     font-size: 28px;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
 }

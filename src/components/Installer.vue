@@ -15,10 +15,11 @@
     @nextStep="curStep += 1"
   >
     <v-stepper-header
-      class="ma-0 blue darken-4"
+      style="font-color: white"
+      class="ma-0 primary"
     >
       <v-stepper-step
-        class="blue darken-4"
+        class="primary"
         :complete="curStep > 1"
         step="1"
       >
@@ -28,7 +29,7 @@
       <v-divider></v-divider>
 
       <v-stepper-step
-        class="blue darken-4"
+        class="primary"
         :complete="curStep > 2"
         step="2"
       >
@@ -38,7 +39,7 @@
       <v-divider></v-divider>
 
       <v-stepper-step
-        class="blue darken-4"
+        class="primary"
         :complete="curStep > 3"
         step="3"
       >
@@ -48,7 +49,7 @@
       <v-divider></v-divider>
 
       <v-stepper-step
-        class="blue darken-4"
+        class="primary"
         :complete="curStep > 4"
         step="4"
       >
@@ -461,26 +462,21 @@
 
 <style scoped>
 .v-stepper {
-    outline: 3px groove #1C6EA4;
-    outline-offset: 0px;
     box-shadow: none !important;
     border-radius: 8px !important;
 
 }
-.v-stepper__header {
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-    font-size: 22px;
-    letter-spacing: -0.4px;
+.v-stepper-header {
+    letter-spacing: 2px;
     word-spacing: 2px;
-    color: #000000;
+    color: #FFFFFF;
     font-weight: 700;
     text-decoration: none;
     font-style: normal;
     font-variant: normal;
     text-transform: none;
-    box-shadow: none !important;
-    border-bottom: thin solid rgba(0, 0, 0, 0.12);
 }
+
 .v-stepper__wrapper {
     display: flex;
     flex-direction: column;
