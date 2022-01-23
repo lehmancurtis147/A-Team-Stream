@@ -4,6 +4,7 @@ const CompressionPlugin = require('compression-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const port = 3000;
 
 module.exports = {
   plugins: [
@@ -43,8 +44,24 @@ module.exports = {
     // ... Vue Loader plugin omitted
     new MiniCssExtractPlugin({
       filename: 'style.css'
-    })
-  ]
+    }),
+  ],
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "public")
+    },
+    compress: true,
+    port,
+    hot: true,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+      "Content-Security-Policy": "...",
+      "Content-Security-Policy-Report-Only": "...",
+      "Access-Control-Allow-Headers":
+        "X-Requested-With, content-type, Authorization",
+    },
+  },
 }
 
 module.exports = {

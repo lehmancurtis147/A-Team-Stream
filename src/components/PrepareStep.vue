@@ -33,7 +33,7 @@
       >
         <v-list-item-content>
           <v-list-item-title
-          class="text-h5 light-blue lighten-6 white--text"
+          class="text-h5 blue lighten-4 white--text"
         >
           {{ device.product }}
         </v-list-item-title>

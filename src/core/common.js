@@ -37,7 +37,7 @@ export function readBlobAsBuffer(blob) {
   })
 }
 
-function waitForFrame() {
+export function waitForFrame() {
   return new Promise((resolve, _reject) => {
     window.requestAnimationFrame(resolve)
   })

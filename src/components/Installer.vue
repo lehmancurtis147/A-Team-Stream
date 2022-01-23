@@ -5,7 +5,7 @@
     height="auto"
     v-model="curStep"
     :alt-labels="!$vuetify.breakpoint.mobile"
-    class="custom-element d-flex flex-column flex-grow-1 fill"
+    class="custom-element d-flex flex-column flex-grow-1 fill white--text"
     @errorClaim="errorClaim"
     @errorDisconnect="errorDisconnect"
     @errorStorage="errorStorage"
@@ -15,11 +15,10 @@
     @nextStep="curStep += 1"
   >
     <v-stepper-header
-      style="font-color: white"
-      class="ma-0 primary"
+      class="ma-0 blue darken-4 white--text"
     >
       <v-stepper-step
-        class="primary"
+        class="blue darken-4 white--text"
         :complete="curStep > 1"
         step="1"
       >
@@ -29,7 +28,7 @@
       <v-divider></v-divider>
 
       <v-stepper-step
-        class="primary"
+        class="blue darken-4 white--text"
         :complete="curStep > 2"
         step="2"
       >
@@ -39,7 +38,7 @@
       <v-divider></v-divider>
 
       <v-stepper-step
-        class="primary"
+        class="blue darken-4 white--text"
         :complete="curStep > 3"
         step="3"
       >
@@ -49,7 +48,7 @@
       <v-divider></v-divider>
 
       <v-stepper-step
-        class="primary"
+        class="blue darken-4 white--text"
         :complete="curStep > 4"
         step="4"
       >

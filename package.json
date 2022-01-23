@@ -41,7 +41,7 @@
     "mini-css-extract-plugin": "^2.4.7",
     "sass": "~1.32",
     "sass-loader": "^12.4.0",
-    "vue-router": "^3.5.3",
+    "vue-router": "^2.0.0",
     "vue-template-compiler": "^2.6.11",
     "webpack-bundle-analyzer": "^4.5.0"
   },

@@ -1,20 +1,21 @@
 <template>
-  <v-app id="app">
+  <v-app id="app" dark>
     <v-main>
       <template>
-        <v-card id="boarder" class="overflow-hidden">
+        <v-theme-provider root text--white>
+          <v-card id="boarder" class="overflow-hidden">
             <span class="pa-n8 ma-n8 container" align="right">
               <img height="252" width="373" alt="Vue logo" src="./assets/logo4.png" class="ma-n4 pa-n10 mb-n10 pb-n10">
             </span>
-          <v-row class="fill-height ma-0 pa-0" align="center" justify="center">
-            <v-col cols="12" sm="4"></v-col>
-              <v-col cols="12" sm="9" class="justify-center ma-0 pa-0">
-                <Installer />
-              </v-col>
-                <v-col cols="12" sm="4"></v-col>
-          </v-row>
-        <Footer flat class="ma-n4 pa-0" />
-        </v-card>
+            <v-row class="fill-height ma-0 pa-0" align="center" justify="center">
+                <v-col cols="12" sm="9" class="justify-center ma-0 pa-0">
+                  <Installer />
+                </v-col>
+                  <v-col cols="12" sm="4"></v-col>
+            </v-row>
+          <Footer flat class="ma-n4 pa-0" />
+          </v-card>
+        </v-theme-provider>
       </template>
     </v-main>
   </v-app>
@@ -36,7 +37,7 @@ export default {
     }
 }
 </script>
-
+lighten-5
 <style>
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -44,7 +45,7 @@ export default {
     font-size: 28px;
     -webkit-font-smoothing: antialiased;
     text-align: center;
-    color: #2c3e50;
+    color: #b8bdc2;
 }
 
 #boarder {
