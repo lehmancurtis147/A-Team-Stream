@@ -21,9 +21,13 @@
     "compression-webpack-plugin": "^9.1.2",
     "core-js": "^3.6.5",
     "envify": "^4.1.0",
+    "sass-lint": "^1.13.1",
+    "sass-loader": "10.1.1",
     "source-map": "^0.7.3",
     "vue": "^2.6.11",
+    "vue-router": "^3.5.3",
     "vuetify": "^2.6.1",
+    "vuetify-loader": "^1.7.3",
     "webpack": "^5.1.0"
   },
   "devDependencies": {
@@ -40,8 +44,6 @@
     "eslint-plugin-vue": "^6.2.2",
     "mini-css-extract-plugin": "^2.4.7",
     "sass": "~1.32",
-    "sass-loader": "^12.4.0",
-    "vue-router": "^2.0.0",
     "vue-template-compiler": "^2.6.11",
     "webpack-bundle-analyzer": "^4.5.0"
   },
