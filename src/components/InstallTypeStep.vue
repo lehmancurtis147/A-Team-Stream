@@ -8,9 +8,8 @@
       <h6
         class="text-h3 pb-4"
       >
-      Choose an install type
+        Choose an install type
       </h6>
-
       <div
         class="text-body-1"
       >
@@ -68,11 +67,11 @@
             class="text-h4 mt-n2"
           >
             <v-icon
-            class="pr-2 py-2"
-            color="rgba(0, 0, 0, 0.87)"
+              class="pr-2 py-2"
+              color="rgba(0, 0, 0, 0.87)"
             >
-            mdi-update
-          </v-icon>
+              mdi-update
+            </v-icon>
             Update
           </v-card-title>
           <v-card-subtitle>
@@ -88,10 +87,10 @@
     >
       <v-btn
         color="primary"
-        @click="$bubble('nextStep')"
         :disabled="$root.$data.product === null"
+        @click="$bubble('nextStep')"
       >
-      Next
+        Next
         <v-icon right>
           mdi-arrow-right
         </v-icon>
@@ -100,32 +99,20 @@
         color="primary"
         @click="$bubble('prevStep')"
       >
-      Back
-    </v-btn>
+        Back
+      </v-btn>
     </div>
   </v-container>
 </template>
 
-<style scoped>
-.theme--light.v-sheet--outlined {
-  border-width: 2px;
-}
-
-.theme--light.v-sheet--outlined.v-card--selected {
-  border: 2px solid rgba(0, 0, 0, 0.77) !important;
-}
-</style>
-
 <script>
 export default {
   name: 'InstallTypeStep',
-
+  // eslint-disable-next-line
   props: ['device', 'blobStore', 'active'],
-
   data: () => ({
     firstSet: true
   }),
-
   watch: {
     active: async function (newState) {
       if (newState) {
@@ -133,18 +120,24 @@ export default {
       }
     }
   },
-
   methods: {
     setType (newType) {
       this.$root.$data.installType = newType
-
       if (this.firstSet) {
         this.firstSet = false
         this.$bubble('nextStep')
       }
-
       this.saEvent(`install_type__${newType}`)
     }
   }
 }
 </script>
+
+<style scoped>
+.theme--light.v-sheet--outlined {
+  border-width: 2px;
+}
+.theme--light.v-sheet--outlined.v-card--selected {
+  border: 2px solid rgba(0, 0, 0, 0.77) !important;
+}
+</style>

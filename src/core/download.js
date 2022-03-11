@@ -5,7 +5,7 @@ const CACHE_DB_VERSION = 1
 
 export class XhrError extends Error {
   // eslint-disable-next-line
-  constructor (status, statusText) {
+  constructor(status, statusText) {
     super(`HTTP error ${status} ${statusText}`)
     this.status = status
     this.statusText = statusText
@@ -14,7 +14,7 @@ export class XhrError extends Error {
 }
 
 // This wraps XHR because getting progress updates with fetch() is overly complicated.
-function fetchBlobWithProgress (url, onProgress) {
+function fetchBlobWithProgress(url, onProgress) {
   const xhr = new XMLHttpRequest()
   xhr.open('GET', url)
   xhr.responseType = 'blob'
@@ -34,34 +34,34 @@ function fetchBlobWithProgress (url, onProgress) {
 }
 
 export class BlobStore {
-  constructor () {
-    this.db = null
+  constructor() {
+    this.db = null;
   }
   // eslint-disable-next-line
-  async _wrapReq (request, onUpgrade = null) {
+  async _wrapReq(request, onUpgrade = null) {
     return new Promise((resolve, reject) => {
       request.onsuccess = () => {
-        resolve(request.result)
-      }
+        resolve(request.result);
+      };
       request.oncomplete = () => {
-        resolve(request.result)
-      }
+        resolve(request.result);
+      };
       request.onerror = (event) => {
-        reject(event)
-      }
+        reject(event);
+      };
 
       if (onUpgrade !== null) {
-        request.onupgradeneeded = onUpgrade
+        request.onupgradeneeded = onUpgrade;
       }
-    })
+    });
   }
   // eslint-disable-next-line
-  async init () {
+  async init() {
     if (this.db === null) {
       this.db = await this._wrapReq(
         indexedDB.open(CACHE_DB_NAME, CACHE_DB_VERSION),
         (event) => {
-          const db = event.target.result
+          let db = event.target.result
           db.createObjectStore('files', { keyPath: 'name' })
           /* no index needed for such a small database */
         }
@@ -69,41 +69,40 @@ export class BlobStore {
     }
   }
   // eslint-disable-next-line
-  async saveFile (name, blob) {
+  async saveFile(name, blob) {
     this.db.transaction(['files'], 'readwrite').objectStore('files').add({
       name: name,
-      blob: blob
-    })
+      blob: blob,
+    });
   }
   // eslint-disable-next-line
-  async loadFile (name) {
+  async loadFile(name) {
     try {
-      const obj = await this._wrapReq(
+      let obj = await this._wrapReq(
         this.db.transaction('files').objectStore('files').get(name)
-      )
-      return obj.blob
+      );
+      return obj.blob;
     } catch (error) {
-      return null
+      return null;
     }
   }
   // eslint-disable-next-line
-  async close () {
-    this.db.close()
+  async close() {
+    this.db.close();
   }
   // eslint-disable-next-line
-  async download (url, onProgress = () => {}) {
-    const filename = url.split('/').pop()
-    let blob = await this.loadFile(filename)
+  async download(url, onProgress = () => { }) {
+    let filename = url.split('/').pop();
+    let blob = await this.loadFile(filename);
     if (blob === null) {
-      common.logDebug(`Downloading ${url}`)
-      blob = await fetchBlobWithProgress(url, onProgress)
-      common.logDebug('File downloaded, saving...')
-      await this.saveFile(filename, blob)
-      common.logDebug('File saved')
+      common.logDebug(`Downloading ${url}`);
+      blob = await fetchBlobWithProgress(url, onProgress);
+      common.logDebug('File downloaded, saving...');
+      await this.saveFile(filename, blob);
+      common.logDebug('File saved');
     } else {
       common.logDebug(`Loaded ${filename} from blob store, skipping download`)
-    }
-
+    };
     return blob
   }
 }

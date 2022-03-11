@@ -54,6 +54,7 @@ module.exports = {
     port,
     hot: true,
     headers: {
+      "Cache-Control": "max-age=31536000",
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
       "Content-Security-Policy": "...",
@@ -90,6 +91,35 @@ module.exports = {
 }
 
 module.exports = {
+  optimization: {
+    moduleIds: 'deterministic',
+    splitChunks: {
+      chunks: 'async',
+      minSize: 20000,
+      minRemainingSize: 0,
+      minChunks: 1,
+      maxAsyncRequests: 30,
+      maxInitialRequests: 30,
+      enforceSizeThreshold: 50000,
+      cacheGroups: {
+        defaultVendors: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+          priority: -10,
+          reuseExistingChunk: true,
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true,
+        }
+      }
+    }
+  }
+}
+
+module.exports = {
   entry: './src/main.js',
   plugins: [
     new HtmlWebpackPlugin({
@@ -99,20 +129,8 @@ module.exports = {
   output: {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
     clean: true
-  },
-  optimization: {
-    moduleIds: 'deterministic',
-    runtimeChunk: 'single',
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
-          chunks: 'all'
-        }
-      }
-    }
   }
 }
 

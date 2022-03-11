@@ -3,13 +3,13 @@
     class="d-flex justify-space-between flex-column flex-grow-1"
   >
     <div
-      class="mb-10 mt-n4"
       v-if="usbSupported"
+      class="mb-10 mt-n4"
     >
       <h6
         class="text-h4 pb-4"
       >
-      PREPARE YOUR DEVICE
+        PREPARE YOUR DEVICE
       </h6>
 
       <div
@@ -25,18 +25,18 @@
         </p>
       </div>
       <v-list-item
+        v-for="device in $root.$data.SUPPORTED_DEVICES"
+        :key="device.model"
         class="justified d-inline-block"
         center
         two-line
-        v-for="device in $root.$data.SUPPORTED_DEVICES"
-        :key="device.model"
       >
         <v-list-item-content>
           <v-list-item-title
-          class="text-h5 blue lighten-4 white--text"
-        >
-          {{ device.product }}
-        </v-list-item-title>
+            class="text-h5 blue lighten-4 white--text"
+          >
+            {{ device.product }}
+          </v-list-item-title>
           <v-list-item-subtitle
             class="text-h7 blue darken-4 white--text"
           >
@@ -52,17 +52,17 @@
     </div>
 
     <div
-      class="mb-10 mt-n4"
       v-else
+      class="mb-10 mt-n4"
     >
       <h6
         class="text-h6 pb-4 red--text text--darken-4"
       >
-      Your browser isn’t supported
+        Your browser isn’t supported
       </h6>
 
       <div
-       class="text-body-1"
+        class="text-body-1"
       >
         <p>
           Unfortunately, you can’t use this web installer for
@@ -87,15 +87,15 @@
     >
       <v-btn
         color="primary"
-        @click="$bubble('nextStep')"
         :disabled="!usbSupported"
+        @click="$bubble('nextStep')"
       >
         Start
         <v-icon
           dark
           right
         >
-        mdi-arrow-right
+          mdi-arrow-right
         </v-icon>
       </v-btn>
     </div>
@@ -104,12 +104,11 @@
 
 <script>
 export default {
+  // eslint-disable-next-line
   props: ['device', 'blobStore', 'active'],
-
   data: () => ({
     usbSupported: 'usb' in navigator
   }),
-
   watch: {
     active: async function (newState) {
       if (newState) {

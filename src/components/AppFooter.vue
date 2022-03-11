@@ -1,5 +1,8 @@
 <template>
-  <div align="center" class="pa-md-4 pt-n10 mx-lg-auto">
+  <div
+    align="center"
+    class="pa-md-4 pt-n10 mx-lg-auto"
+  >
     <v-footer
       style="flat"
       color="transparent"
@@ -15,11 +18,11 @@
             class="text-h5 text-center subheading"
           >
             &copy; 2019-{{ new Date().getFullYear() }} —
-              <a
-                href="https://pizzag.github.io/"
-              >
-                A-Team Digital Solutions
-              </a>
+            <a
+              href="https://pizzag.github.io/"
+            >
+              A-Team Digital Solutions
+            </a>
           </strong>
         </v-card-text>
       </v-card>

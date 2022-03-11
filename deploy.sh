@@ -5,9 +5,8 @@ set -e
 # build
 yarn build
 
-#workbox generateSW workbox-config.js
-# Build cache service worker
-#workbox generateSW workbox-config.js
+npx purifycss ./dist/css/*.css ./dist/js/main.js --min --info --out ./dist/css/index.css
+
 cd dist
 
 git init

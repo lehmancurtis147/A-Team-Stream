@@ -1,5 +1,4 @@
 <template>
-
   <v-container
     class="d-flex justify-space-between flex-column flex-grow-1"
   >
@@ -13,8 +12,8 @@
       </h6>
 
       <div
-        class="text-body-1"
         v-if="$root.$data.release !== null"
+        class="text-body-1"
       >
         <p>
           Congratulations! Your {{ getDeviceName($root.$data.product) }} is now running {{ $root.$data.OS_NAME }} {{ $root.$data.release.version
@@ -50,7 +49,7 @@
               width="80px"
               class="d-inline justify-space-between"
               src="./icons/PaypalIcon.png"
-            />
+            >
           </div>
           {{ donation.title }}
         </v-card-title>
@@ -71,6 +70,27 @@
   </v-container>
 </template>
 
+<script>
+import { getDeviceName } from '../core/devices'
+
+export default {
+  name: 'FinishStep',
+  // eslint-disable-next-line
+  props: ['device', 'blobStore', 'active'],
+  watch: {
+    active: async function (newState) {
+      if (newState) {
+        this.saEvent('step_finish')
+      }
+    }
+  },
+  methods: {
+    getDeviceName
+  }
+}
+
+</script>
+
 <style scoped>
 
   .theme--light.v-sheet--outlined {
@@ -82,26 +102,3 @@
   }
 
 </style>
-
-<script>
-import { getDeviceName } from '../core/devices'
-
-export default {
-  name: 'FinishStep',
-
-  props: ['device', 'blobStore', 'active'],
-
-  watch: {
-    active: async function (newState) {
-      if (newState) {
-        this.saEvent('step_finish')
-      }
-    }
-  },
-
-  methods: {
-    getDeviceName
-  }
-}
-
-</script>

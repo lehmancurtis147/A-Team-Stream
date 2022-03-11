@@ -13,7 +13,7 @@
                 "variant": "orangeFox",
                 "partition": "recovery",
                 "thumnail": "/thumnails/ofrp.png",
-                "url": "/releases/files/orfp-tetra.img.zip"
+                "url": "/releases/files/orfp-tetra.img.gz"
             },
             {
                 "version": "PBRP",

@@ -25,15 +25,18 @@ export function logEvent(event, callback) {
 }
 
 export function readBlobAsBuffer(blob) {
+  const bufferPromise = blob.arrayBuffer()
   return new Promise((resolve, reject) => {
     let reader = new FileReader()
     reader.onload = () => {
-      resolve(reader.result)
+      arrayBuffer = event.target.result
+      resolve(reader.result.blob[0])
     }
     reader.onerror = () => {
       reject(reader.error)
     }
-    reader.readAsArrayBuffer(blob)
+    reader.readAsArrayBuffer(blob[0])
+    reader.result
   })
 }
 

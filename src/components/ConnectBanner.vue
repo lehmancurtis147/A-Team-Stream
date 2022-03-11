@@ -1,28 +1,28 @@
+/* eslint-disable */
 <template>
   <v-banner
+    v-if="connecting"
     single-line
     outlined
     rounded
     class="mt-8"
-    v-if="connecting"
   >
     <v-progress-circular
       indeterminate
       color="primary"
-    >
-    </v-progress-circular>
+    />
     <span
       class="text-body-1"
     >
-    Connecting to device…
+      Connecting to device…
     </span>
   </v-banner>
   <v-banner
+    v-else-if="($this.device.isConnected && $root.$data.product !== null)"
     single-line
     outlined
     rounded
     class="mt-8"
-    v-else-if="this.device.isConnected && $root.$data.product !== null"
   >
     <v-icon
       color="green darken-3"
@@ -36,11 +36,11 @@
     </span>
   </v-banner>
   <v-banner
+    v-else-if="error"
     single-line
     outlined
     rounded
     class="mt-8"
-    v-else-if="error"
   >
     <v-icon
       color="red darken-3"
@@ -56,10 +56,11 @@
 </template>
 
 <script>
-import { getDeviceName } from '../core/devices'
+import { getDeviceName } from '../core/devices.js'
 
 export default {
   name: 'ConnectBanner',
+  // eslint-disable-next-line
   props: ['device', 'connecting', 'error'],
   methods: {
     getDeviceName

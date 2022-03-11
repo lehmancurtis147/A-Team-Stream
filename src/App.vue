@@ -1,30 +1,68 @@
-<template>
-  <v-app id="app" dark>
-    <v-main>
-      <template>
-        <v-theme-provider root text--white>
-          <v-card id="boarder" class="overflow-hidden">
-            <span class="pa-n8 ma-n8 container" align="right">
-              <img height="252" width="373" alt="Vue logo" src="./assets/logo4.png" class="ma-n4 pa-n10 mb-n10 pb-n10">
-            </span>
-            <v-row class="fill-height ma-0 pa-0" align="center" justify="center">
-                <v-col cols="12" sm="9" class="justify-center ma-0 pa-0">
-                  <Installer />
-                </v-col>
-                  <v-col cols="12" sm="4"></v-col>
+// eslint-disable-next-line
+<template
+  v-app
+>
+  <v-app
+    id="app"
+    dark
+    style="font-face"
+  >
+    <v-main
+      id="background"
+    >
+      <div
+        class="logo container"
+      >
+        <span
+          class="pa-4 ma-4 container"
+          justify="left"
+        />
+      </div>
+      <v-spacer />
+      <div>
+        <v-theme-provider
+          root
+          text--white
+        >
+          <v-card
+            id="background"
+          >
+            <span
+              class="pa-4 ma-4 container"
+              align="right"
+            />
+            <v-row
+              class="fill-height ma-0 pa-0"
+              align="center"
+              justify="center"
+            >
+              <v-col
+                cols="12"
+                sm="9"
+                class="justify-center ma-0 pa-0"
+              >
+                <Installer />
+              </v-col>
+              <v-col
+                cols="12"
+                sm="4"
+              />
             </v-row>
-          <Footer flat class="ma-n4 pa-0" />
+            <Footer
+              flat
+              class="ma-n4 pa-0"
+            />
           </v-card>
         </v-theme-provider>
-      </template>
+      </div>
     </v-main>
   </v-app>
 </template>
 
 <script>
 import * as fastboot from 'android-fastboot'
-import Installer from '@/components/Installer.vue'
-import Footer from '@/components/Footer.vue'
+import Installer from '@/components/AteamInstaller.vue'
+import Footer from '@/components/AppFooter.vue'
 import Vue from 'vue'
 
 Vue.use(fastboot)
@@ -37,7 +75,7 @@ export default {
     }
 }
 </script>
-lighten-5
+
 <style>
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -48,10 +86,25 @@ lighten-5
     color: #b8bdc2;
 }
 
-#boarder {
-    background: #030847;
-    background: -moz-linear-gradient(top, #030847 0%, #2E3D8D 32%, #030506 100%);
-    background: -webkit-linear-gradient(top, #030847 0%, #2E3D8D 32%, #030506 100%);
-    background: linear-gradient(to bottom, #030847 0%, #2E3D8D 32%, #030506 100%);
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Pacifico Regular'), local('Pacifico-Regular'), url(https://fonts.gstatic.com/s/pacifico/v12/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2) format('woff2');
+  font-display: swap;
 }
+
+#background {
+  background-image: linear-gradient(to bottom right, #05032b, #02010f, #000000);
+}
+
+.logo {
+  width: 180px;
+  height: 165px;
+  background: url(assets/logo4.png);
+  background-size: contain;
+  background-position: left top;
+  background-repeat: no-repeat;
+}
+
 </style>
