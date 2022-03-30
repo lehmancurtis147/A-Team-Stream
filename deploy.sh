@@ -3,7 +3,7 @@
 set -e
 
 # build
-yarn build
+yarn build --fix
 
 npx purifycss ./dist/css/*.css ./dist/js/main.js --min --info --out ./dist/css/index.css
 

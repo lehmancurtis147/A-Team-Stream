@@ -11,14 +11,8 @@
       id="background"
     >
       <div
-        class="logo container"
-      >
-        <span
-          class="pa-4 ma-4 container"
-          justify="left"
-        />
-      </div>
-      <v-spacer />
+        class="mx-4 logo container"
+      />
       <div>
         <v-theme-provider
           root
@@ -99,8 +93,8 @@ export default {
 }
 
 .logo {
-  width: 180px;
-  height: 165px;
+  width: 190px;
+  height: 185px;
   background: url(assets/logo4.png);
   background-size: contain;
   background-position: left top;

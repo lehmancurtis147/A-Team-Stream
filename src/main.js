@@ -9,6 +9,13 @@ import vuetify from './plugins/vuetify.js'
 import Config from './config'
 import 'core-js/modules/es.promise'
 import 'core-js/modules/es.array.iterator'
+import WebFont from 'webfontloader'
+
+WebFont.load({
+  google: {
+    families: ["Fira+Sans:300,400,400i,600,700"],
+  },
+})
 
 const promises = [
   cancelable(new Promise((resolve) => setTimeout(resolve, 1))),
@@ -100,6 +107,7 @@ new Vue({
     product: null,
     zipBlob: null,
     release: null,
+    partition: null,
     installType: null,
     ...Config
   },

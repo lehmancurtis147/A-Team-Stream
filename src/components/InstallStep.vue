@@ -155,6 +155,7 @@ import * as fastboot from 'android-fastboot'
 import { getDeviceName } from '../core/devices.js'
 
 Vue.use(fastboot)
+Vue.use(common)
 
 export default {
     name: 'InstallStep',
@@ -186,7 +187,7 @@ export default {
             await this.install();
         },
         async errorRetry() {
-            await this.install();
+          await this.install();
         },
         async install() {
           this.installed = false
@@ -197,38 +198,50 @@ export default {
             }
             this.saEvent(
               `install_build__${this.$root.$data.product}_${this.$root.$data.release.version}_${this.$root.$data.release.variant}`
-            );
-            let blob = `$(this.blob)`
-            let partition = `$(this.$root.$data.release.partition)`
+            )
+            let blob = (this.blob)
+            let partition = (this.$root.$data.release.partition)
             let onProgress = 'this.installProgress = progress * 100'
             if (this.partition === 'recovery') {
               await this.device.flashBlob(
                 (`has-slot:${partition}`) === "no",
                 partition,
                 blob,
-                onProgress
-              )
+                onProgress,
+                this.reconnectCallback,
+                this.installStatus = `${userAction} ${userItem}`,
+                this.installStatusIcon = INSTALL_STATUS_ICONS[action],
+                this.installProgress = progress * 100,
+                this.installStatus = 'Restarting into recovery mode')
+              await this.device.reboot('recovery'),
+                this.installed = true,
+                this.error = null
+            if (`this.installed === true`) {
+              this.$bubble('nextStep')
             }
+          }
+        } finally {
+          this.installing = false
             this.installed = true
             this.error = null
             if (this.firstInstall) {
               this.firstInstall = false
               this.$bubble('nextStep')
             }
-          } catch (e) {
-            this.installed = false
-            this.installProgress = null
-            let [handled, message] = this.bubbleError(e)
-            this.error = message
-            if (!handled) {
-              throw e
+        } try {
+          this.installed = false
+          this.installProgress = null
+          let [handled, message] = this.bubbleError(e)
+          this.error = message
+          if (!handled) {
+            throw e
             }
-          } finally {
-            this.installing = false
+        } finally {
+          this.installed = true
           }
+        }
       }
-    }
-  }
+}
 
 </script>
 
@@ -240,4 +253,5 @@ export default {
 .v-banner--single-line .v-banner__text {
     white-space: normal !important;
 }
+
 </style>
