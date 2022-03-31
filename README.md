@@ -1,6 +1,7 @@
-# a-team-stream
+# A-TEAM-STREAM
+![A-Team Logo](/src/assets/logo.png)
 
-## Project setup
+### Project setup
 ```
 yarn install
 ```
@@ -20,5 +21,10 @@ yarn build
 yarn lint
 ```
 
+### Deploy
+```
+yarn run deploy
+```
+
 ### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+>See [Configuration Reference](https://cli.vuejs.org/config/).
