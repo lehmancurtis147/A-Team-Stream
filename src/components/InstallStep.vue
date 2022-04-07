@@ -162,13 +162,13 @@ export default {
     // eslint-disable-next-line
     props: ['device', 'blobStore', 'active'],
     data: () => ({
-        installProgress: null,
-        installStatus: '',
+        installProgress: false,
+        installStatus: 'false',
         installed: false,
-        installing: false,
+        installing: false, true,
         firstInstall: true,
         error: null,
-        memoryDialog: false,
+        memoryDialog: false, true
     }),
     watch: {
         active: async function(newState) {
